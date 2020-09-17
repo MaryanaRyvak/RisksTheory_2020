@@ -7,7 +7,7 @@ int main()
 {
     int XA_1,XA_2,XB_1,XB_2;
     float PA_1,PA_2,PB_1,PB_2;
-    double MA,MB,VA,VB,SihmaA,SihmaB;//CVA,CVB,SSVA,SSVB,CSVA,CSVB,NPVA,NPVB,ZA,ZB;
+    double MA,MB,VA,VB,SihmaA,SihmaB,CVA,CVB;
     cout << "Enter the profit and its probability of the first result (with multiple supply) of the firm in this city:" << endl;
     cin >> XA_1 >> PA_1;
     cout << "Enter the profit and its probability of the second result (with single supply) of the firm in this city:" << endl;
@@ -46,6 +46,20 @@ int main()
     cout << endl;
     cout << "That's the degree of risk is the least here!" << endl;
 
+    CVA = SihmaA / MA;
+    CVB = SihmaB / MB;
+
+    cout << endl;
+    cout << "Coefficient of variation of the firm in this city (A): " << CVA << endl;
+    cout << "Coefficient of variation of the firm in another city (B): " << CVB << endl;
+    cout << endl;
+
+    if (CVA < CVB)
+        cout << "The smallest coefficient of variation is at the firm in this city. ";
+    else
+        cout << "The smallest coefficient of variation is at the firm from another city.";
+    cout << endl;
+    cout << "Recommend choosing this firm!" << endl;
 
 
     return 0;
