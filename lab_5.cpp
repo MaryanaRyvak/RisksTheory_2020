@@ -13,6 +13,7 @@ double findMin(double **f, int k)
         if(minValue > f[k][i])
             minValue = f[k][i];
     }
+   
     return minValue;
 }
 
@@ -29,6 +30,7 @@ double* findMax(double *a)
             result[1] = i+1;
          }
     }
+
     return result;
 }
 
@@ -41,6 +43,7 @@ double criterionBayes( double **f, int k)
     {
         sum += p * f[k][i];
     }
+
     return sum;
 }
 
@@ -57,15 +60,14 @@ void printResult(double *HL)
         cout << "HL" << i+1 << "= " << HL[i] << "  ";
     }
     cout << endl;
-
 }
 
 int main()
 {
     int i, j;
-    double **F = new double *[4];
-    for( i = 0; i < 4; ++i)
-        F[i] = new double[3];
+    double **F = new double *[n+1];
+    for( i = 0; i < n+1; ++i)
+        F[i] = new double[m+1];
 
     cout << "Enter  elements of matrix F: " << endl;
 
